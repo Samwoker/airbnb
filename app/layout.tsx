@@ -1,15 +1,20 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar";
-import { Inter, Inconsolata, Roboto } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const inconsolata = Inconsolata({ subsets: ["latin"] });
-const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
+
+export const metadata: Metadata = {
+  title: "Next.js project",
+  description: "A Next.js project with TypeScript and Tailwind CSS",
+  keywords: "Next.js, TypeScript, Tailwind CSS",
+};
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={inter.className}>
         <NavBar />
         <main className="max-w-3xl py-4 mx-auto"> {children}</main>
       </body>
